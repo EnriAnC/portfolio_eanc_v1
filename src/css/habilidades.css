@@ -1,0 +1,110 @@
+@import url(./eyes-ball.css);
+
+#habilidades .habilidades-grid div, #habilidades h2{
+    position: relative;
+    z-index: 100;
+}
+
+#habilidades{
+    text-align: center;
+    background-color: var(--color1);
+    position: relative;
+}
+
+#habilidades h2:nth-child(1){
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+.tecnologias{
+    min-height: calc(80vh);
+    width: 100%;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 100px), 1fr));
+    grid-auto-flow:row;
+    align-items: center;
+    justify-items: center;
+}
+.tecnologias h2{
+    font-size: 1.25rem;
+}
+.tecnologias svg{
+    width: 50px;
+}
+
+@media (min-width:1024px) {
+    .tecnologias{
+
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr));
+
+    }
+}
+/* SVG HOVER COLORS */
+#html.tech:hover path{
+    fill: #E34F26;
+}
+#css.tech:hover path{
+    fill: #1572B6;
+}
+#js.tech:hover path{
+    fill: #F7DF1E;
+}
+#nodejs.tech:hover path{
+    fill: #339933;
+}
+#express.tech:hover path{
+    fill: #000000;
+}
+#hs.tech:hover path{
+    fill: #46332b;
+}
+#socket.tech:hover path{
+    fill: #010101;
+}
+#jwt.tech:hover path{
+    fill: #000000;
+}
+#react.tech:hover path{
+    fill: #61DAFB;
+}
+#postgre.tech:hover path{
+    fill: #4169E1;
+}
+#oracle.tech:hover path{
+    fill: #F80000;
+}
+#python.tech:hover path{
+    fill: #3776AB;
+}
+
+
+.wave-top-2{
+    background-image: url(../img/wave-top-2.svg);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-repeat: repeat-x;
+    background-position: top;
+    height: 20vh;
+    z-index: 5;
+}
+.wave-bot-2{
+    background-image: url(../img/wave-bot-2.svg);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    height: 20vh;
+}
+
+.wave-top-2, .wave-bot-2{
+    filter: opacity(.25);
+    /* background-color: #05263389; */
+}

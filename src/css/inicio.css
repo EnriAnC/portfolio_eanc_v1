@@ -1,0 +1,187 @@
+#inicio{
+    background-color: var(--color1);
+    height: calc(100vh - 65px);
+    display: grid;
+    grid-template: "l r" ;
+    position: relative;
+}
+@media (max-width: 625px) {
+    #inicio{
+        grid-template:  "l" 4fr
+                        "r" 3fr;
+    }
+}
+#inicio div{
+    overflow: hidden;
+}
+#inicio .right{
+    grid-area: r;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+#inicio .right #canvas{
+    cursor: pointer;
+    border: 1px;
+    /* border-color: rgba(164, 164, 162, 0.2);
+    border-style: dashed; */
+    animation: canvas-rotate 10s infinite;
+}
+
+@keyframes canvas-rotate{
+    0%{
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(20deg);
+    }
+    100%{
+        transform: rotateY(0deg);
+    }
+}
+
+
+#inicio .left{
+    grid-area: l;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+    padding: 0 10%;
+    position: relative;
+    z-index: 100;
+
+}
+#inicio .left h1{
+    margin-top: 0rem;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    line-height: 90%;
+    text-shadow: 10px 12px 0px black;
+}
+#inicio .left h2{
+    font-size: 2rem;
+    color: #eeeeee;
+    text-align: end;
+    /* text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.715); */
+}
+
+#inicio .left h2:nth-child(1) span:nth-child(1){
+    color: #7ce3ba;
+    position: relative;
+    top: -50vh;
+    opacity: 0;
+    /* text-decoration: underline; */
+    animation: fromTop 1s forwards;
+}
+
+#inicio .left h2:nth-child(3) span:nth-child(1){
+    animation-duration: 1.3s;
+    animation-timing-function: ease-in-out;
+}
+#inicio .left h2:nth-child(3) span:nth-child(3){
+    animation-duration: 1.66s;
+    animation-timing-function: ease-in-out;
+}
+
+#inicio .left h2:nth-child(3) span:nth-child(5){
+    animation-duration: 1.99s;
+    animation-timing-function: ease-in-out;
+}
+
+
+#inicio .left h2:nth-child(3){
+    align-self: end;
+}
+
+
+/* WAVES BACKGROUND */
+.wave-top-1{
+    background-image: url(../img/wave-top-1.svg);
+    position: absolute;
+    width: 100%;
+    top: -65px;
+    background-repeat: repeat-x;
+    background-position: top;
+    height: 20vh;
+    z-index: 5;
+}
+.wave-bot-1{
+    background-image: url(../img/wave-bot-1.svg);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    background-repeat: repeat-x;
+    background-position: bottom;
+    height: 20vh;
+}
+
+.wave-top-1, .wave-bot-1{
+    filter: opacity(.25);
+    /* background-color: #05263389; */
+}
+
+
+/* ENTRY ANIMATIONS  */
+
+.relative{
+    position: relative;
+}
+
+.framesFromTop{
+    opacity: 0;
+    top: -50vh;
+    animation: fromTop 1s forwards;
+}
+
+.framesFromBottom{
+    opacity: 0;
+    bottom: -50vh;
+    animation: fromBottom 1s forwards;
+}
+
+.framesFromRight{
+    opacity: 0;
+    right: -50vh;
+    animation: fromRight 1s forwards;
+}
+
+.framesFromLeft{
+    opacity: 0;
+    left: -50vh;
+    animation: fromLeft 1s forwards;
+}
+
+@keyframes fromTop {
+    to{
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fromBottom {
+    to{
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fromRight {
+    to{
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes fromLeft {
+    to{
+        left: 0;
+        opacity: 1;
+    }
+}

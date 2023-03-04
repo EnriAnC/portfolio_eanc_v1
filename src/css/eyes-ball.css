@@ -1,0 +1,96 @@
+@media (min-width:640px) and (min-height:280px) {
+    .habilidades-grid{
+        display: grid;
+        grid-template:  "l r"/1fr 1fr;
+    }
+    .habilidades-interactivo{
+        grid-area: l;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .tecnologias{
+        grid-area: r;
+    }
+    .tech{
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+    }
+    /* EYES AND FACE */
+    #face {
+        position: relative;
+        background: radial-gradient(circle at 35% 35%,var(--color1), #000);
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 40px 20px 10px #3232327c;
+    }
+    #face{
+        position: relative;
+        z-index: 0 !important;
+    }
+    
+    .eye {
+        position: absolute !important;
+        top: 35%;
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+    }
+    
+    .eye.left {
+        left: 50%;
+    }
+    
+    .eye.right {
+        left: 75%;
+    }
+    
+    .pupil {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #ffffff;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        box-shadow: -1px 1px 0px 1px black;
+    }
+    
+    .pupil::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background: black;
+    }
+
+    .mouth{
+        position: absolute;
+        left: 57%;
+        top: 55%;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 2.5px solid rgba(251, 45, 45, 0.319);
+        background: radial-gradient(circle at 10%, #000 10%, rgba(251, 45, 45, 0.319));
+        
+        box-shadow: -1.5px 1px 0px 1px rgba(0, 0, 0, 0.833);
+        transform: rotateX(83deg);
+        transition: transform .5s;
+    }
+
+    
+    .mouth.open{
+        transform: scale(1.75,1.75);
+    }
+      
+}
