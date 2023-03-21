@@ -82,9 +82,12 @@
 .contacto-grid-right .contact-form h3{
     color: black;
     z-index: 10;
-    margin-bottom: 2vh;
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
+}
+
+.contact-form h5{
+    margin-bottom: 2vh;
 }
 
 

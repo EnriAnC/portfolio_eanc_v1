@@ -1,26 +1,20 @@
 
 const $left = document.getElementById('left'),
     $right = document.getElementById('right'),
-    $carrusel = document.getElementById('carrusel-proyectos'),
-    $proyA = document.getElementById('proy-1'),
-    $proyB = document.getElementById('proy-2');
+    $carrusel = document.getElementById('carrusel-proyectos');
 
+const div = document.getElementsByClassName('proyecto')
+console.log()
 
-// [$left, $right].forEach(arrow=>{
-//     arrow.addEventListener('click', e=>{
-//         console.log(e)
-//     })
-// })
-
-
+let posActual = 0
 $left.addEventListener('click', e=>{
-    console.log(e)
-    console.log($proyA.getBoundingClientRect().x)
-    $carrusel.scrollTo(-d.body.clientWidth, 0)
+    posActual -= d.body.clientWidth
+    if (posActual <= 0) posActual = 0
+    $carrusel.scrollTo(posActual, 0)
 })
 
 $right.addEventListener('click', e=>{
-    console.log(e)
-    console.log($proyB.getBoundingClientRect().x)
-    $carrusel.scrollTo(d.body.clientWidth, 0)
+    posActual += d.body.clientWidth
+    if (posActual >= (d.body.clientWidth * (div.length - 1))) posActual = d.body.clientWidth * (div.length - 1)
+    $carrusel.scrollTo(posActual, 0)
 })
